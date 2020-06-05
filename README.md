@@ -5,6 +5,7 @@
 | [Functions](https://docs.microsoft.com/en-us/sql/t-sql/functions/functions?view=sql-server-ver15)
 | [AlwaysOn](https://www.red-gate.com/simple-talk/sql/database-administration/sql-server-2012-alwayson/)
 | [AlwaysOnAvailibility](https://docs.microsoft.com/en-us/sql/database-engine/availability-groups/windows/overview-of-always-on-availability-groups-sql-server?view=sql-server-ver15)
+| [SecurityGroups](https://www.mssqltips.com/sqlservertip/1831/using-windows-groups-for-sql-server-logins-as-a-best-practice/)
 ## Table Variable
 ```
 declare @TableVariable Table (ColumnName1 nvarchar(150), ColumnName2 nvarchar(150) );
@@ -24,3 +25,4 @@ SELECT COLUMN_NAME
 FROM INFORMATION_SCHEMA.COLUMNS
 WHERE TABLE_NAME = 'Your Table Name'
 ```
+## 
