@@ -25,11 +25,11 @@ SSMS -> Default Instance -> ./Name or local/Name or Localhost/Name or SysName/Na
 
 Course: T-SQL Training with Real World Scenarios:Tricks of the Trade in Udemy
 ## Table Variable
-```
+```SQL
 declare @TableVariable Table (ColumnName1 nvarchar(150), ColumnName2 nvarchar(150) );
 ```
 ## Update with Conditions
-```
+```SQL
 UPDATE [dbo].[Table] SET ColumnName1 = 
 CASE   
   WHEN isNull(ColumnName1,'') = '' THEN 'value'
@@ -38,7 +38,7 @@ CASE
 END 
   ```
 ## All Columns
-```
+```SQL
 SELECT COLUMN_NAME
 FROM INFORMATION_SCHEMA.COLUMNS
 WHERE TABLE_NAME = 'Your Table Name'
@@ -49,7 +49,7 @@ Design technique that organizes tables in a manner that reduces redundancy and d
 ## Iterate through each record of a table
 * Create a Table Variable with a Record Id and additional Columns
 * Iterate through each record using While loop using the Record Id
-```
+```sql
 DECLARE @Temp TABLE(
 	RecordId INT NOT NULL,
 	col1 INT NOT NULL,
@@ -69,5 +69,13 @@ WHILE @RecCounter <= @TempCnt
   BEGIN
     --Logic to process each record
   END
+```
+## Duplicate Record on Specific Columns 
+[[1]](https://chartio.com/learn/databases/how-to-find-duplicate-values-in-a-sql-table/)
+```SQL
+SELECT [Col1],[Col2], COUNT(*) [DUPLICATE COUNT] FROM Tab1
+GROUP BY [Col1],[Col2]
+HAVING COUNT(*) > 1
+AND [Col1] = 'Val'
 ```
 
