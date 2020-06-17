@@ -10,6 +10,7 @@
 | [Database Normalization](https://www.studytonight.com/dbms/database-normalization.php)
 | [FileStream Restore](https://www.sqlshack.com/restoring-a-sql-server-filestream-enabled-database/)
 | [Interview](https://www.interviewbit.com/sql-interview-questions/)
+| [While Vs Cursor](https://sqlundercover.com/2017/11/16/sql-smackdown-cursors-vs-loops/)
 ## SQL Server in different User
 Hold <kbd>shift</kbd> and right click on SQL Server Mangement studion icon. You can Run as other windows account user.
 ## Multiple Instances of SQL Server in one Server
