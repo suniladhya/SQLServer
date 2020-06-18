@@ -80,3 +80,11 @@ HAVING COUNT(*) > 1
 AND [Col1] = 'Val'
 ```
 
+## Multiple Join Condition
+```SQL
+select one.*, two.meal
+from table1 as one
+left join table2 as two
+on (one.weddingtable = two.weddingtable and one.tableseat = two.tableseat)
+
+```
