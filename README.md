@@ -88,3 +88,31 @@ left join table2 as two
 on (one.weddingtable = two.weddingtable and one.tableseat = two.tableseat)
 
 ```
+## Multiple Transaction
+```SQL
+BEGIN TRANSACTION one;
+BEGIN TRY
+    /*SQL statements goes here*/
+END TRY
+BEGIN CATCH
+    IF @@TRANCOUNT > 0
+        ROLLBACK TRANSACTION one;
+
+END CATCH
+
+IF @@TRANCOUNT > 0
+    COMMIT TRANSACTION one;
+
+
+BEGIN TRANSACTION two;
+BEGIN TRY
+    /*SQL statements goes here*/
+END TRY
+BEGIN CATCH
+    IF @@TRANCOUNT > 0
+        ROLLBACK TRANSACTION two;
+END CATCH
+
+IF @@TRANCOUNT > 0
+    COMMIT TRANSACTION two;
+```    
