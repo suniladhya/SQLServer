@@ -3,7 +3,8 @@
 [While](https://www.sqlshack.com/sql-while-loop-understanding-while-loops-in-sql-server/)
 | [SSIS](https://www.c-sharpcorner.com/UploadFile/ff0d0f/deployment-models-in-ssis/)
 | [Functions](https://docs.microsoft.com/en-us/sql/t-sql/functions/functions?view=sql-server-ver15)
-| [AlwaysOn](https://www.red-gate.com/simple-talk/sql/database-administration/sql-server-2012-alwayson/)
+| [AlwaysOn1](https://www.red-gate.com/simple-talk/sql/database-administration/sql-server-2012-alwayson/)
+| [AlwaysOn2](https://docs.microsoft.com/en-us/sql/database-engine/availability-groups/windows/overview-of-always-on-availability-groups-sql-server?view=sql-server-ver15#:~:text=In%20a%20read%2Dscale%20availability,node%20of%20the%20same%20WSFC.)
 | [AlwaysOnAvailibility](https://docs.microsoft.com/en-us/sql/database-engine/availability-groups/windows/overview-of-always-on-availability-groups-sql-server?view=sql-server-ver15)[[1]](https://www.youtube.com/watch?v=kOHrHYc6sAM)
 | [SecurityGroups](https://www.mssqltips.com/sqlservertip/1831/using-windows-groups-for-sql-server-logins-as-a-best-practice/)
 | [SQL Interview Question](https://www.edureka.co/blog/interview-questions/sql-interview-questions)
@@ -126,4 +127,8 @@ END CATCH
 
 IF @@TRANCOUNT > 0
     COMMIT TRANSACTION two;
-```    
+``` 
+## Always On
+There are two different architectures for availability groups.
+1. Always On availability groups
+2. Read-scale availability group
