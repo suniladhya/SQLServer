@@ -11,6 +11,8 @@
 | [FileStream Restore](https://www.sqlshack.com/restoring-a-sql-server-filestream-enabled-database/)
 | [Interview](https://www.interviewbit.com/sql-interview-questions/)
 | [While Vs Cursor](https://sqlundercover.com/2017/11/16/sql-smackdown-cursors-vs-loops/)
+| [Update with Select stmt](https://www.sqlshack.com/how-to-update-from-a-select-statement-in-sql-server/)
+|
 ## SQL Server in different User
 Hold <kbd>shift</kbd> and right click on SQL Server Mangement studion icon. You can Run as other windows account user.
 ## Multiple Instances of SQL Server in one Server
@@ -37,6 +39,15 @@ CASE
   WHEN  CHARINDEX('abc', ColumnName1) = 0 THEN ColumnName1+',xyz' 
   ELSE ColumnName1 
 END 
+  ```
+  ```SQL
+UPDATE alias1 SET alias1.col1= alias2.col2
+FROM Table01 alias1
+	INNER JOIN Table01 alias2 
+	ON (alias1.coln = alias2.coln AND alias1.col2n = alias2.col2n AND alias1.col3n = alias2.col3n)
+WHERE 
+alias1.col1 IS Null
+AND alias2.col1 IS NOT Null
   ```
 ## All Columns
 ```SQL
