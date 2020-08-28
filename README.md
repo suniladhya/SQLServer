@@ -132,3 +132,23 @@ IF @@TRANCOUNT > 0
 There are two different architectures for availability groups.
 1. Always On availability groups
 2. Read-scale availability group
+
+## Simple Cursor
+```sql
+DECLARE @cur1_cid int                
+ DECLARE cur CURSOR LOCAL FOR                
+    SELECT DISTINCT col1  FROM [dbo].[Table3] 
+	WHERE Col3 
+	IN(
+	SELECT c.Id from Table1 cs
+	Inner Join Table2 c on cs.Name = c.Name)
+ OPEN cur                
+ FETCH NEXT FROM cur INTO @cur1_cid                
+ WHILE @@FETCH_STATUS = 0                
+  BEGIN                
+   EXEC StoredProc @cur1_cid                
+   FETCH NEXT FROM cur INTO @cur1_cid                
+  END                
+ CLOSE cur                
+ DEALLOCATE cur 
+ ```
