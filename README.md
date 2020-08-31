@@ -37,8 +37,7 @@ Course: T-SQL Training with Real World Scenarios:Tricks of the Trade in Udemy
             ,ERROR_STATE() AS ErrorState  
             ,ERROR_PROCEDURE() AS ErrorProcedure  
             ,ERROR_LINE() AS ErrorLine  
-            ,ERROR_MESSAGE() AS ErrorMessage; 
-	    
+            ,ERROR_MESSAGE() AS ErrorMessage; 	    
 ```
 ## Table Variable
 ```SQL
