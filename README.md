@@ -28,6 +28,18 @@ SSMS -> Default Instance -> . or local or Localhost or SysName
 SSMS -> Default Instance -> ./Name or local/Name or Localhost/Name or SysName/Name
 
 Course: T-SQL Training with Real World Scenarios:Tricks of the Trade in Udemy
+## Stored Procedure Catch Block
+  ```SQL
+  PRINT 'XACT_State(-1: Uncommittable, 1:Committable, 0:No active user transaction):'
+  PRINT XACT_STATE();
+  SELECT ERROR_NUMBER() AS ErrorNumber  
+            ,ERROR_SEVERITY() AS ErrorSeverity  
+            ,ERROR_STATE() AS ErrorState  
+            ,ERROR_PROCEDURE() AS ErrorProcedure  
+            ,ERROR_LINE() AS ErrorLine  
+            ,ERROR_MESSAGE() AS ErrorMessage; 
+	    
+```
 ## Table Variable
 ```SQL
 declare @TableVariable Table (ColumnName1 nvarchar(150), ColumnName2 nvarchar(150) );
