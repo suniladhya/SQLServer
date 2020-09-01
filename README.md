@@ -28,6 +28,53 @@ SSMS -> Default Instance -> . or local or Localhost or SysName
 SSMS -> Default Instance -> ./Name or local/Name or Localhost/Name or SysName/Name
 
 Course: T-SQL Training with Real World Scenarios:Tricks of the Trade in Udemy
+## StoredProc Format
+```SQL
+SET ANSI_NULLS ON  
+GO  
+SET QUOTED_IDENTIFIER ON  
+GO  
+-- =============================================
+-- Stored Procedure Name : [dbo].[usp_StoredProcedureName]
+-- Author:      <Author,,Name>  
+-- Create date: <Create Date,,>  
+-- Description: <Description,,>  
+-- =============================================
+IF EXISTS (SELECT * FROM sysobjects WHERE id = object_id(N'[dbo].[SPNAME]') AND OBJECTPROPERTY(id, N'IsProcedure') = 1)
+BEGIN
+	DROP PROCEDURE dbo.SPNAME
+END
+CREATE PROCEDURE [dbo].[usp_StoredProcedureName]
+(
+	@Parameter1 INT
+	,@Parameter2 VARCHAR(50)
+	,@ReturnValue1 INT OUTPUT
+	,@ErrorCode INT = 0 OUTPUT
+) AS
+/*
+	*****************************Revision Details*****************************
+	Project/
+	Revision No. Changed On  Changed By  Change Description
+	------------ ----------  ----------  ------------------
+	1234	     2018/01/10   Mr. ABC     New column 'NewColumnName' added.
+	1235         2018/03/16   Mr. XYZ     Column 'ColumnName' deleted.
+*/
+ 
+BEGIN
+	SET NOCOUNT ON
+	BEGIN TRY
+		BEGIN TRANSACTION
+			--INSERT statement and other logic go here.
+		COMMIT TRANSACTION
+		RETURN 0
+	END TRY
+	BEGIN CATCH
+		IF @@TRANCOUNT > 0
+		ROLLBACK TRANSACTION
+		RETURN 1
+	END CATCH
+END
+```
 ## Stored Procedure Catch Block
   ```SQL
   PRINT 'XACT_State(-1: Uncommittable, 1:Committable, 0:No active user transaction):'
