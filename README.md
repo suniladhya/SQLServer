@@ -210,3 +210,10 @@ DECLARE @cur1_cid int
  CLOSE cur                
  DEALLOCATE cur 
  ```
+## Objet Definition
+### View
+```SQL
+SELECT DEFINITION 
+FROM SYS.OBJECTS O JOIN SYS.SQL_MODULES M ON M.object_id = .Oobject_id
+WHERE O.object_id = object_id( '[SCHEMA].[ViewName]') AND O.TYPE = 'V'
+```
