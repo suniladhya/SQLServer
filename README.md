@@ -214,6 +214,6 @@ DECLARE @cur1_cid int
 ### View
 ```SQL
 SELECT DEFINITION 
-FROM SYS.OBJECTS O JOIN SYS.SQL_MODULES M ON M.object_id = .Oobject_id
+FROM SYS.OBJECTS O JOIN SYS.SQL_MODULES M ON M.object_id = O.object_id
 WHERE O.object_id = object_id( '[SCHEMA].[ViewName]') AND O.TYPE = 'V'
 ```
