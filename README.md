@@ -247,3 +247,15 @@ SELECT DEFINITION
 FROM SYS.OBJECTS O JOIN SYS.SQL_MODULES M ON M.object_id = O.object_id
 WHERE O.object_id = object_id( '[SCHEMA].[ViewName]') AND O.TYPE = 'V'
 ```
+## Dynamic Replacement in a string
+```SQL
+declare @vSurveyMessage Nvarchar(1000)
+declare @vfirstname Nvarchar(1000)
+
+set @vSurveyMessage =  'Recently we invited you to participate in a survey to help  + [@vfirstname]';
+
+set @vfirstname = 'Hello'
+set @vSurveyMessage= REPLACE(@vSurveyMessage,'[@vfirstname]','Hello Sunil')
+print @vSurveyMessage
+
+```
