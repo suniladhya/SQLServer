@@ -121,6 +121,8 @@ Design technique that organizes tables in a manner that reduces redundancy and d
 * Create a Table Variable with a Record Id and additional Columns
 * Iterate through each record using While loop using the Record Id
 ```sql
+Declare @TempCnt INT = 1,
+	@RecCounter INT = 1;
 DECLARE @Temp TABLE(
 	RecordId INT NOT NULL,
 	col1 INT NOT NULL,
@@ -139,6 +141,7 @@ SET @RecCounter = 1;
 WHILE @RecCounter <= @TempCnt
   BEGIN
     --Logic to process each record
+  SET @RecCounter += 1
   END
 ```
 ## Duplicate Record on Specific Columns 
